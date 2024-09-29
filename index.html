@@ -12,8 +12,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 0 10px;
             flex-direction: column;
         }
 
@@ -23,12 +24,12 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
-            width: 90%; /* Adjusted for smaller screens */
-            max-width: 600px; /* Max width to ensure good size on larger screens */
+            width: 100%;
+            max-width: 600px; /* Adjust the max-width to limit size on larger screens */
         }
 
         h1 {
-            font-size: 6vw; /* Responsive font size */
+            font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size using clamp */
             color: #333;
             margin-bottom: 20px;
             font-family: 'Verdana', sans-serif;
@@ -36,7 +37,7 @@
         }
 
         #flashcard {
-            font-size: 10vw; /* Responsive font size */
+            font-size: clamp(2.5rem, 10vw, 4rem); /* Responsive flashcard font */
             font-weight: bold;
             color: #2f54eb;
             background-color: #e3f2fd;
@@ -51,8 +52,9 @@
         #controls {
             display: flex;
             justify-content: space-around;
-            align-items: center;
             flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         button {
@@ -60,12 +62,13 @@
             border: none;
             color: #fff;
             padding: 10px 20px;
-            font-size: 4vw; /* Responsive font size */
+            font-size: clamp(0.9rem, 3vw, 1.1rem); /* Responsive button font size */
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-bottom: 10px; /* Add space between buttons */
+            flex: 1 1 calc(33% - 10px); /* Buttons grow and shrink responsively */
+            max-width: 150px; /* Limit button size */
         }
 
         button:hover {
@@ -83,12 +86,13 @@
             border: 2px solid #2f54eb;
             background-color: #fff;
             color: #333;
-            font-size: 4vw; /* Responsive font size */
+            font-size: clamp(0.9rem, 3vw, 1.1rem); /* Responsive font size */
             font-weight: bold;
+            width: 100%;
         }
 
         label {
-            font-size: 4vw; /* Responsive font size */
+            font-size: clamp(0.9rem, 3vw, 1.1rem); /* Responsive font size */
             font-weight: bold;
             color: #555;
         }
@@ -105,11 +109,11 @@
         /* Add styling for the image at the bottom */
         #fretboardImage {
             margin-top: 30px;
-            max-width: 100%; /* Make the image responsive */
+            max-width: 100%;
             height: auto;
         }
 
-        /* Media Queries for specific mobile adjustments */
+        /* Additional breakpoints for smaller devices */
         @media (max-width: 600px) {
             .container {
                 padding: 15px; /* Less padding on smaller screens */
@@ -128,6 +132,7 @@
                 width: 100%; /* Full-width select on mobile */
             }
         }
+
     </style>
 </head>
 <body>
@@ -153,6 +158,11 @@
                 <option value="3000">3</option>
                 <option value="4000">4</option>
                 <option value="5000">5</option>
+                <option value="6000">6</option>
+                <option value="7000">7</option>
+                <option value="8000">8</option>
+                <option value="9000">9</option>
+                <option value="10000">10</option>
             </select>
         </div>
 
