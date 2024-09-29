@@ -136,7 +136,7 @@
         const soundToggleButton = document.getElementById('soundToggleBtn');
         const intervalSelect = document.getElementById('interval');
         let flashcardInterval;
-        let soundOn = true; // Sound is enabled by default
+        let soundOn = false; // Sound is not enabled by default
 
         // Web Audio API setup
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -144,17 +144,17 @@
         // Map of guitar notes to their corresponding frequencies (in Hz)
         const noteFrequencies = {
             'A': 440,
-            'A#': 466.16,
+            'A#/Bb': 466.16,
             'B': 493.88,
             'C': 261.63,
-            'C#': 277.18,
+            'C#/Db': 277.18,
             'D': 293.66,
-            'D#': 311.13,
+            'D#/Eb': 311.13,
             'E': 329.63,
             'F': 349.23,
-            'F#': 369.99,
+            'F#/Gb': 369.99,
             'G': 392.00,
-            'G#': 415.30
+            'G#/Ab': 415.30
         };
 
         // List of guitar notes
