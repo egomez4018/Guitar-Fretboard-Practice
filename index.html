@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -99,6 +99,13 @@
         #flashcard span {
             transition: color 0.3s ease, opacity 0.3s ease;
         }
+
+        /* Add styling for the image at the bottom */
+        #fretboardImage {
+            margin-top: 30px;
+            max-width: 100%; /* Make the image responsive */
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -126,6 +133,10 @@
                 <option value="5000">5</option>
             </select>
         </div>
+
+        <!-- Add the static image at the bottom -->
+        <img id="fretboardImage" src="/mnt/data/guitar-fretboard-notes-diagram-768x384.png" alt="Guitar Fretboard Notes Diagram">
+
     </div>
 
     <script>
